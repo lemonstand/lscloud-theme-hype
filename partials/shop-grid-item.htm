@@ -1,0 +1,7 @@
+{% set on_sale = product.onSale %}
+<a href="/product/{{ product.url_name }}">
+  <img src="{{ product.images.first.thumbnail(650,150,{crop:true}) }}" alt="{{ product.name }}">
+  <div class="item-detail">
+    <h2>{{ product.name }}</h2>
+  </div>
+</a>

@@ -1,0 +1,57 @@
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="nav-content">
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a class="navbar-brand" id="logo" href="{{ site_url('/') }}"><img src="{{ theme.logoImage.thumbnail('auto','auto') }}" alt=""/></a></li>
+        <li><a href="{{ site_url('shop') }}">THE STORE</a></li>
+        <li><a href="{{ site_url('about') }}">ABOUT</a></li>
+        <li id="search-button">
+          <!-- Search Bar -->
+          {{ open_form({'role': 'form', 'method': 'get', 'action': site_url('search')}) }}               
+              <input type="text" class="search-form form-control" name="query" id="query" placeholder="Find a product" autocomplete="off" value="{{query|unescape}}">
+          {{ close_form() }}
+        </li>
+      </ul>
+
+
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li>        
+          {% if customer %}
+          <a href="{{ site_url('profile') }}">Account</a><a href="{{ site_url('logout') }}"> Logout</a>
+
+          {% else %}
+            <a href="{{ site_url('login') }}">Login</a>
+          {% endif %}
+        </li>
+        <li id="normal-cart">
+          <a id="normal-carts" href="{{ site_url('cart') }}">{{ partial('shop-minicart-totals') }}</a>
+<!--           <div id="mini-cart">
+            {{ partial('shop-minicart', {'edit_cart': true}) }}
+          </div> -->
+        </li>
+        <li id="mobile-cart">
+          <a href="{{ site_url('cart') }}"><i class="fa fa-shopping-cart"></i></a>
+        </li>
+
+      </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+

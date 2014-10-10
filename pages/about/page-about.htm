@@ -1,0 +1,33 @@
+---
+description: 'The About Page'
+template: template-1
+protocol: all
+published: true
+name: About
+url: /about
+---
+<div class="row about" id="about-bg">
+  <div class="col-md-4" id="about-text">
+    <h3>This is Hype</h3>
+    <p>Everyone is a chef. Hype is a collective group aims to provide the easiest cooking experience. Order a menu item from our menu and get it sent to your door the day of. All products include ingredients, cooking recipes and instructions. Our only aim is to share our passion for food.  </p>
+    <p>Send us a message if you have questions.</p>
+
+    {{ open_form({'data-ajax-handler': 'system:onSendMessage'}) }}
+      {{ flash() }}
+      <div class="form">
+        <div class="field-row" id="contact-form">
+          <input class="required md-input form-control" placeholder="Email Address*" value="" name="fields[email]" id="fields_email"/>
+          <span class="error"></span>
+
+          <input class="required md-input form-control" placeholder="Name*" value="" name="fields[name]" id="fields_name" />
+          <span class="error"></span>
+
+          <textarea rows="10" class="required md-input form-control" placeholder="Message*" value="" name="fields[message]" id="fields_message"></textarea>
+          <span class="error"></span>
+        </div>
+        <input type="submit" class="btn-default btn" value="Submit"/>
+        <input type="text" name="hp" value="" style="display: none"/>
+      </div>
+    {{ close_form() }}
+  </div>
+</div>

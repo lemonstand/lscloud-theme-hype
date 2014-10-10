@@ -1,0 +1,65 @@
+	<h2>{{ product.name }}</h2> <br>
+	{% set on_sale = product.onSale %}
+
+  {% for image in product.images %}
+			<img src="{{ image.thumbnail(750,750,{crop:true}) }}" alt="{{ product.name }}">
+	{% endfor %}
+		
+	<!-- PRODUCT DETAIL -->
+	<div id="product-detail">
+
+		<div class="col-md-12">
+			{% if on_sale %}
+				<small class="previous-price">{{ product.fullPrice|currency }}</small>
+			{% endif %} 
+			<h3>{{ product.price|currency }}</h3>
+
+	  	<p>{{product.description|unescape}}</p>
+
+  		{{ partial('shop-product-attributes') }}
+
+			{% if product.enabled %}
+	      
+	      {{ partial('shop-product-options') }}
+	      
+	    {% if not product.isOutOfStock() or product.allow_preorder %}
+      <input type="hidden" name="productId" value="{{ product.id }}"/>
+	      <div class="add-cart-holder form-group">
+	        {{ flash() }}
+	        <div class="quantity-selector">
+	        	<label class="title">Quantity</label>
+	          <input class="form-control quantity" type="text" value="{{ quantity|default("1") }}" name="quantity"/>
+	        </div>
+	      </div>
+
+			<a class="btn btn-important btn-add-cart" href="#" data-ajax-handler="shop:onAddToCart" data-ajax-update="#mini-cart=shop-minicart, #product-page=shop-product, #navbar-totals=shop-minicart-totals">Add to Cart </a><br><br>
+		</div>
+
+	    {% else %}
+	      <div class="not-available">
+	        <h5>This product is temporarily unavailable</h5>
+	      </div>
+	    {% endif %}
+	    
+	  {% else %}
+	    <div class="not-available">
+	      <h5>This product is not available</h5>
+	    </div>
+  {% endif %}
+	</div>
+
+
+<script type="text/javascript">
+	function changeImage(a) {
+	  document.getElementById("big-thumb").src=a;
+	};
+</script>
+
+
+
+
+
+
+
+
+
