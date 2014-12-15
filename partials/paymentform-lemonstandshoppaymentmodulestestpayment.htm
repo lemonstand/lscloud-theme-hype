@@ -1,8 +1,10 @@
 ---
 description: 'Payment form partial for Test Payment payment method'
 ---
-<h6>This is a test payment method. Never use your real credit card information in this form.</h6>
+<h6>This is a test payment method. Never use your real credit card information in this form.alkjflsajflksj</h6>
 <form method="post" action="" data-ajax-handler="shop:onPay">
+<div class="payment-card">
+  <h4>TEST PAYMENT</h4>
   <input type="hidden" name="payment_method_id" value="{{ paymentMethod.id}}">
   <div class="form row">
     
@@ -47,7 +49,9 @@ description: 'Payment form partial for Test Payment payment method'
         <label for="EXPDATE_YEAR">Expiration Date - Year</label>
     </div>
     
-  </div>
+  </div><!-- End .payment-card -->
+ 
+</div>
   <div class="clearfix">
     <a class="btn btn-default pull-left" href="#" 
         data-ajax-handler="shop:checkout" 
@@ -55,4 +59,4 @@ description: 'Payment form partial for Test Payment payment method'
         data-ajax-extra-fields="nextStep=shipping_method">Previous Step</a>
     <button type="submit" class="btn btn-important pull-right">Pay Now</button>
   </div>
-</form>
+</form> 

@@ -2,8 +2,11 @@
 template: home
 protocol: all
 published: true
-name: Urban Essence
+name: Hype
 url: /
 ---
 
-<h1 id="intro-title">WE ARE HYPE, <br> A FOOD COLLECTIVE <br> <a href="{{ site_url('shop') }}">Shop the Menu</a></h1>
+<div id="intro-title">
+	<h1>{{ theme.homeTitle }}</h1>
+	<a href="{{ site_url('shop') }}">{{ theme.homeButtonTitle}}</a>
+</div>

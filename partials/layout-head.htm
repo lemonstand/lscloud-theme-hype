@@ -23,32 +23,21 @@
 
     <!-- THEME CUSTOMiZATION OPTIONS -->
     <style type="text/css">
-        .subfooter{
-            background: {{ theme.subFooterColor }};
+        .navbar-default .navbar-nav > li > a {
+          color: {{ theme.navbarLinkColor }};
         }
-        .main-footer{
-            background: {{ theme.mainFooterColor }};
+        .navbar{
+          background: {{ theme.navbarBackgroundColor }};
         }
-        #intro-left{
-            background: url( {{ theme.introImageOne.thumbnail('auto','auto') }} )no-repeat top center;
+        #intro-image, #login-page, #about-bg{
+            background: url( {{ theme.homeImage.thumbnail('auto','auto') }} )no-repeat top center;
               -webkit-background-size: cover;
               -moz-background-size: cover;
               -o-background-size: cover;
               background-size: cover;
         }
-         #intro-right{
-            background: url( {{ theme.introImageTwo.thumbnail('auto','auto') }} )no-repeat top center;
-              -webkit-background-size: cover;
-              -moz-background-size: cover;
-              -o-background-size: cover;
-              background-size: cover;
-        }
-        #contact{
-            background: url( {{ theme.introImageTwo.thumbnail('auto','auto') }} )no-repeat bottom center;
-              -webkit-background-size: cover;
-              -moz-background-size: cover;
-              -o-background-size: cover;
-              background-size: cover;
+        #intro-title{
+          background:{{ theme.homeBannerColor }};
         }
     </style>
     

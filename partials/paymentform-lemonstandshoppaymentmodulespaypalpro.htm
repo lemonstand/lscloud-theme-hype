@@ -2,6 +2,8 @@
 description: 'Payment form partial for PayPal Pro payment method'
 ---
 <form method="post" action="" data-ajax-handler="shop:onPay">
+<div class="payment-card">
+<h4>PayPal Pro</h4>
     <input type="hidden" value="{{  paymentMethod.id}}" name="payment_method_id">
     <div class="form">
       <div class="row">
@@ -66,7 +68,7 @@ description: 'Payment form partial for PayPal Pro payment method'
     </div>
     
     </div>
-     
+     </div>
     <div class="clearfix">
       <a class="btn btn-default pull-left" href="#" 
         data-ajax-handler="shop:checkout" 

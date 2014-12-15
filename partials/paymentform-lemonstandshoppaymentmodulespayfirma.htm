@@ -2,6 +2,8 @@
 description: 'Payment form partial for Payfirma payment method'
 ---
 <form method="post" action="" id="payfirma-payment-form">
+<div class="payment-card">
+<h4>Payfirma</h4>
     <input type="hidden" name="payment_method_id" value="{{ paymentMethod.id}}">
     <div class="form">
         <div class="row field-row">
@@ -57,7 +59,7 @@ description: 'Payment form partial for Payfirma payment method'
           
     </div>
     </div>
-
+    </div> <!-- End .payment-card -->
     <div class="clearfix">
       <a class="btn btn-default pull-left" href="#" 
         data-ajax-handler="shop:checkout" 

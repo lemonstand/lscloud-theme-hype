@@ -1,8 +1,12 @@
 $(document).ready(function() {
 
 //DROP DOWN MENU
-$('#drop-it').on('click', function() {
-  $('.dropdown-list').toggleClass('expand');
+$('.dropdown-text').click(function() {
+  $('.dropdown-content').toggleClass('dropdown-show');
+});
+
+$('.dropdown-text').on('tap', function() {
+  $('.dropdown-content').toggleClass('dropdown-show');
 });
 
 //CART/MINICART

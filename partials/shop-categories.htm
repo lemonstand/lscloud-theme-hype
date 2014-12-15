@@ -1,7 +1,9 @@
 <div class="dropdown">
-  <input class="dropdown-toggle" type="text">
-  <div class="dropdown-text">Categories</div>
-  <ul class="dropdown-content">
+  <button class="btn btn-drop dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+    Categories
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
     {% set active_cat = category.id %}
     {% tree categories %}
     {% for category in tree.items %}
