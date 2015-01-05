@@ -1,7 +1,7 @@
 ---
 name: HYPE
 description: 'A minimalistic product theme'
-author: 'Daniel Park (@D_Hanul_Park)'
+author: 'Daniel Park (@itsdpark)'
 website: 'http://dparkd.com'
 engine: twig
 404: '404'
