@@ -1,20 +1,22 @@
-	<h2>{{ product.name }}</h2> <br>
-	{% set on_sale = product.onSale %}
+	<div class="col-md-9">
+		<h2>{{ product.name }}</h2> <br>
+		<p>{{ product.description|unescape }}</p>
+		{% set on_sale = product.onSale %}
 
-  {% for image in product.images %}
+		{% for image in product.images %}
 			<img src="{{ image.thumbnail(750,750,{crop:true}) }}" alt="{{ product.name }}">
-	{% endfor %}
+		{% endfor %}
+	</div>
+	
 		
 	<!-- PRODUCT DETAIL -->
-	<div id="product-detail">
+	<div class="product-detail col-md-3">
 
 		<div class="col-md-12">
 			{% if on_sale %}
 				<small class="previous-price">{{ product.fullPrice|currency }}</small>
 			{% endif %} 
 			<h3>{{ product.price|currency }}</h3>
-
-	  	<p>{{product.description|unescape}}</p>
 
   		{{ partial('shop-product-attributes') }}
 
@@ -47,14 +49,6 @@
 	    </div>
   {% endif %}
 	</div>
-
-
-<script type="text/javascript">
-	function changeImage(a) {
-	  document.getElementById("big-thumb").src=a;
-	};
-</script>
-
 
 
 

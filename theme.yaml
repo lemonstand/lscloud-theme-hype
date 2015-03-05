@@ -1,5 +1,5 @@
 ---
-name: HYPE
+name: 'HYPE'
 description: 'A minimalistic product theme'
 author: 'Daniel Park (@itsdpark)'
 website: 'http://dparkd.com'
@@ -8,13 +8,11 @@ engine: twig
 customFields:
     storeTitle: { type: text, title: 'Title of your Store', default: 'Hype' }
     faviconImage: {type:image, title:'Favicon Image (Image you see on the chrome)', default:'@img/logo.png'}
-    navbarBackgroundColor: { type:color, title:'Global: Navbar Background Color', default:'#2B2928'}
-    navbarLinkColor: { type:color, title:'Global: Navbar Link Color', default:'rgba(255,255,255,0.8)'}
+    navbarBackgroundColor: { type:color, title:'Global: Navbar Background Color', default:'white'}
+    bodyContentBorder: { type: color, title: 'Border top and bottom for the body content', default:'rgba(232, 185, 0, 0.8)'}
     logoImage: { type: image, title: 'Global: Logo Image', default: '@/img/logo.png'}
-    homeTitle: { type: text, title: 'Home: Introduction Title', defaut: 'WE ARE HYPE'}
-    homeButtonTitle: { type: text, title: 'Home: Introduction Button Title', default: 'Shop the Store'}
-    homeBannerColor: { type: text, title: 'Home: Introduction Banner Color', default: 'white'}
-    homeImage: { type: image, title: 'Background Image for the Home, About, and Login page', default:'@img/bg.jpg'}
+    BackgroundImage: { type: image, title: 'Background Image for the Home, About, and Login page', default:'@img/bg.jpg'}
+    homeImage: { type: image, title: 'Home image', default: '@/img/home-intro.png'}
     Contact: { type:text, title: 'Home: Contact Title', default: 'CONTACT TANTO'}
     ContactNumber: {type: text, title: 'Home: Contact Phone Number', default: '829-192-9382'}
     ContactEmail: {type: textt, title: 'Home: Contact Email Address', default: 'support@hype.com'}
@@ -25,3 +23,4 @@ customFields:
     socialTumblrUrl: {type:text, title: 'Global: Tumblr URL', default: 'http://tumblr.com'}
     shopItemsPerPage: { type:text, title:'Shop: Number of products displayed per page.', default:'15'}
 ---
+

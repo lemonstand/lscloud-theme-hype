@@ -1,24 +1,21 @@
 {{ code_block('setup') }}
-
-
-    
-    <div id="main-footer">
+    <div class="main-footer">
         <div class="row">
             <div class="col-md-12">
-                <div class="col-md-4 foot-box">
-                    <p>The Store</p>
-                    <h6>We are open all day <br> {{ theme.ContactAddress }}</h6>
+                <div class="col-md-3 foot-box">
+                    <h2>Hype</h2>
+                    <p>We are open all day <br> {{ theme.ContactAddress }}</p>
                 </div>
-                <div class="col-md-4 foot-box">
-                    <p>Contact us</p>
-                    <h6>{{ theme.storeTitle }} <br> P: {{ theme.ContactNumber }} <br> Mail: {{ theme.ContactEmail }}</h6>
+                <div class="col-md-3 foot-box">
+                    <h2>Contact us</h2>
+                    <p>{{ theme.storeTitle }} <br> P: {{ theme.ContactNumber }} <br> Mail: {{ theme.ContactEmail }}</p>
                 </div>
-                <ul class="list-unstyled col-md-4 foot-box" id="social">
-                    <p>Share our story</p>
-                    <a href="{{ theme.socialFacebookUrl }}" class="col-md-3"><li><i class="fa fa-facebook fa-2x"></i></li></a>
-                    <a href="{{ theme.socialInstagramUrl }}" class="col-md-3"><li><i class="fa fa-instagram fa-2x"></i></li></a>
-                    <a href="{{ theme.socialTwitterUrl }}" class="col-md-3"><li><i class="fa fa-twitter fa-2x"></i></li></a>
-                    <a href="{{ theme.socialTumblrUrl }}" class="col-md-3"><li><i class="fa fa-tumblr fa-2x"></i></li></a>
+                <ul class="list-unstyled col-md-6 text-right">
+                    <h2>Share our story</h2>
+                    <a href="{{ theme.socialFacebookUrl }}"><li><i class="fa fa-facebook fa-2x"></i></li></a>
+                    <a href="{{ theme.socialInstagramUrl }}"><li><i class="fa fa-instagram fa-2x"></i></li></a>
+                    <a href="{{ theme.socialTwitterUrl }}"><li><i class="fa fa-twitter fa-2x"></i></li></a>
+                    <a href="{{ theme.socialTumblrUrl }}"><li><i class="fa fa-tumblr fa-2x"></i></li></a>
                 </ul>
             </div>
         </div>

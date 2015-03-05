@@ -10,8 +10,8 @@ url: '/product/:urlName'
 <div clas="jumbotron">
 	{{ open_form({'class': 'custom', 'onsubmit': 'return false'}) }}
 		{% if product %}
-			<div class="row" id="product" >
-				<div id="product-page" class="content">
+			<div class="row" class="product" >
+				<div class="product-page content ">
 					{{ partial('shop-product') }}
 				</div>
 			</div>

@@ -10,7 +10,9 @@ description: 'index template'
 </head> 
 <body>
     {{ partial('layout-header')}}
-    {{ page() }} 
+    <div class="wrapper">
+    	{{ page() }} 
+    </div>
     {{ partial('layout-footer') }}
     {{ partial('layout-foot') }}
 </body>
