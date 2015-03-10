@@ -1044,6 +1044,7 @@ select {
   =============================================*/
   body{
     text-align:center;
+    padding-top:50px;
   }
   #intro-info{
     margin:0;
@@ -1051,6 +1052,18 @@ select {
   .row{
     padding-top:20px;
   }
+  .content{
+    width:95%;
+  }
+  .navbar{
+    position:fixed;
+    top:0;
+    z-index:999;
+  }
+  .navbar-collapse{
+    background:white;
+  }
+
   
 /*============================================
      INDEX PAGE = INTRO
@@ -1067,6 +1080,12 @@ select {
 .intro-content img{
   width:80%;
   padding-top:60px;
+}
+.cart-mobile{
+  padding-top:15px;
+}
+#item-middle{
+  padding-right:0;
 }
 
 /*============================================
@@ -1371,6 +1390,10 @@ select {
 #login-forms .col-md-9{
   padding-right:0;
 }
+#cart-row{
+  padding-top:20px;
+}
+
 }
 
 
@@ -1623,6 +1646,9 @@ select {
   }
   .show-mobile{
     display:inline-block;
+  }
+  #cart-row{
+    padding-top:15px;
   }
 }
 

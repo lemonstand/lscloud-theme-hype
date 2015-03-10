@@ -21,15 +21,18 @@
 				{% endif %}
 			</div>
 			<div class="col-sm-3" id="item-middle">
-				<p class="col-sm-9">{{ item.total()|currency }}</p>
+				<p class="col-sm-9 cart-mobile">
+					{{ item.total()|currency }}
+					{% if edit_cart %}
+						<a class="col-sm-3" id="item-close" href="#close" 
+						data-ajax-handler="shop:cart" 
+						{# data-ajax-confirm="Do you really want to remove this item from the cart?" #}
+						data-ajax-update="#cart-content=shop-cart-content, #mini-cart=shop-minicart, #navbar-totals=shop-minicart-totals"
+						data-ajax-extra-fields="delete_item='{{ item.key }}'"><i class="fa fa-times" id="remove-cart-item"></i></a>
+					{% endif %}
+				</p>
 
-				{% if edit_cart %}
-					<a class="col-sm-3" id="item-close" href="#close" 
-					data-ajax-handler="shop:cart" 
-					{# data-ajax-confirm="Do you really want to remove this item from the cart?" #}
-					data-ajax-update="#cart-content=shop-cart-content, #mini-cart=shop-minicart, #navbar-totals=shop-minicart-totals"
-					data-ajax-extra-fields="delete_item='{{ item.key }}'"><i class="fa fa-times" id="remove-cart-item"></i></a>
-				{% endif %}
+				
 			</div>
 		</div>
 	</div>

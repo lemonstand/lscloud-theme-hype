@@ -25,9 +25,12 @@ $("#checkout-page").on('click', '.data-ajax-url', function(e) {
     e.preventDefault();
     hashHistory.push($(this).attr('data-hash'));
 
-    if($(this).attr('data-hash') == 'step-2'){
-      $("html, body").scrollTop(50);  
+    if (window.innerWidth < 991) {
+      if($(this).attr('data-hash') == 'step-2'){
+        $("html, body").scrollTop(50);  
+      }
     }
+    
 
     // Allow the window to go back on hashchange 
     setTimeout(function(){
