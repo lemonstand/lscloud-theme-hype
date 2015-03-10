@@ -11,8 +11,7 @@
   {% elseif step == 'pay' %}
       <input type="hidden" name="step" value="pay">
   {% endif %}
-
-<div class="row">
+<div class="row checkout-row">
 
 <div class="col-md-9">
   
@@ -200,7 +199,7 @@
     </div>
     <div class="col-sm-12">
         {% if step == 'billing_info' %}
-          <a class="btn btn-important pull-right data-ajax-url" data-ajax-handler="shop:checkout" data-ajax-update="#checkout-page=shop-checkout, #checkout-totals=shop-checkout-totals" data-hash="step-2">Proceed to Shipping</a>
+          <a href="#top" class="btn btn-important pull-right data-ajax-url" data-ajax-handler="shop:checkout" data-ajax-update="#checkout-totals=shop-checkout-totals, #checkout-page=shop-checkout" data-hash="step-2">Proceed to Shipping</a>
         {% else %}
           
         {% endif %}
@@ -265,42 +264,11 @@
       <p>Choose Payment method or start again</p>
     {% elseif step == 'shipping_method' %}
       {% if shippingOptions %}
-        {% if shippingOptions|length ==1 %}
-          <input type="hidden" value="" name="shippingMethod"><br>
-          <table class="compact full-width" id="shipping-methods">
-            {% for index, option in shippingOptions %}
-              <tr>
-                <td>
-                  <label for="{{ 'option'~index }}">
-                    <!-- The shipping method radio button clicks are handled in the app.js -->
-                    <input name="shippingMethod" 
-                      {{ option.error_hint ? 'disabled' : null }} 
-                      value="{{ index }}" 
-                      {{ radio_state(shippingMethodInfo.id, option.id) }}
-                      type="radio" id="{{ 'option'~index }}" checked/>
-                      
-                    <span class="choice-title">
-                      {{ option.shippingMethodName }}
-                      {% if option.shippingServiceName %}: {{ option.shippingServiceName }}{% endif %}
-                    </span>
-                    
-                    {% if option.error_hint %}
-                      <span class="choice-description error-hint">{{ option.error_hint }}</span>
-                    {% endif %}
-                  </label>
-                </td>
-                <td class="narrow">
-                  {% if not option.error_hint  %}
-                    {{ not option.is_free ? option.quote|currency : 'free' }}
-                  {% endif %}
-                </td>
-              </tr>
-            {% endfor %}
-          </table> 
-        {% else %} <!-- else shippingoptions length == 1  -->
+      
             <input type="hidden" value="" name="shippingMethod"><br>
             <table class="compact full-width" id="shipping-methods">
               {% for index, option in shippingOptions %}
+              {% if loop.index == 1 %}
                 <tr>
                   <td>
                     <label for="{{ 'option'~index }}">
@@ -309,7 +277,7 @@
                         {{ option.error_hint ? 'disabled' : null }} 
                         value="{{ index }}" 
                         {{ radio_state(shippingMethodInfo.id, option.id) }}
-                        type="radio" id="{{ 'option'~index }}"/>
+                        type="radio" id="{{ 'option'~index }}" checked/>
                         
                       <span class="choice-title">
                         {{ option.shippingMethodName }}
@@ -327,9 +295,36 @@
                     {% endif %}
                   </td>
                 </tr>
+              {% else %}
+                <tr>
+                  <td>
+                    <label for="{{ 'option'~index }}">
+                      <!-- The shipping method radio button clicks are handled in the app.js -->
+                      <input name="shippingMethod" 
+                        {{ option.error_hint ? 'disabled' : null }} 
+                        value="{{ index }}" 
+                        {{ radio_state(shippingMethodInfo.id, option.id) }}
+                        type="radio" id="{{ 'option'~index }}" checked/>
+                        
+                      <span class="choice-title">
+                        {{ option.shippingMethodName }}
+                        {% if option.shippingServiceName %}: {{ option.shippingServiceName }}{% endif %}
+                      </span>
+                      
+                      {% if option.error_hint %}
+                        <span class="choice-description error-hint">{{ option.error_hint }}</span>
+                      {% endif %}
+                    </label>
+                  </td>
+                  <td class="narrow">
+                    {% if not option.error_hint  %}
+                      {{ not option.is_free ? option.quote|currency : 'free' }}
+                    {% endif %}
+                  </td>
+                </tr>
+              {% endif %}
               {% endfor %}
             </table>
-        {% endif %} <!-- End if for options ==1 -->
       {% else %}
         <p>We are sorry, there are no shipping options available for your location.</p>
       {% endif %} <!-- End shippingOptions if -->
@@ -395,24 +390,40 @@
       {% elseif order.payment_processed %}
         <p class="flash info"><strong>Thank you!</strong> The payment is already processed for this order.</p>
       {% else %}
+        {% set paymentMethod = false %}
         <div id="payment_method">
           <div class="col-md-12 columns">
             {{ open_form({'class': 'custom'}) }}
-            {% if paymentMethods|length == 1 %}
-              {% for method in paymentMethods %}      
-                <input class="custom-radio" name="paymentMethodId" value="{{ method.id }}" type="radio" id="payment-method{{ method.id }}"/>
-                <label for="payment-method{{ method.id }}" class="choice-title h6"> {{ method.name }} </label>
-              {% endfor %}
-            {% else %}
-              {% for method in paymentMethods %}      
-                <input class="custom-radio" name="paymentMethodId" value="{{ method.id }}" type="radio" id="payment-method{{ method.id }}" />
-                <label for="payment-method{{ method.id }}" class="choice-title h6"> {{ method.name }} </label>
-              {% endfor %}
-            {% endif %}
+                {% for method in paymentMethods %}  
+                    {% if loop.index == 1 %}
+                        {% set paymentMethod = method %}
+                        <input class="custom-radio" name="paymentMethodId" value="{{ method.id }}" type="radio" id="payment-method{{ method.id }}" checked="checked"/>
+                        <label for="payment-method{{ method.id }}" class="choice-title h6"> {{ method.name }} </label>
+
+                    {% else %}
+
+                        <input class="custom-radio" name="paymentMethodId" value="{{ method.id }}" type="radio" id="payment-method{{ method.id }}" />
+                        <label for="payment-method{{ method.id }}" class="choice-title h6"> {{ method.name }} </label>
+
+                    {% endif %}
+                {% endfor %}
             </form>
           </div>
         </div>
-          <div id="payment_form">{{ partial('shop-paymentform') }}</div> 
+
+        <div id="payment_form">
+            {% if paymentMethod is defined %}
+                {% set name = paymentMethod.getFrontendPartialName() %}
+                {{ partial(name, {paymentMethod: paymentMethod, payment: payment}) }}
+            {% else %}
+              {% set message = payment_method.pay_offline_message() %}
+              {% if message %}
+                <p>{{ message }}</p>
+              {% else %}  
+              {% endif %}
+            {% endif %}
+        </div>
+
         
         <a class="btn btn-default pull-left data-ajax-url"
         id="previous-shipping-method"

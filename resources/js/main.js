@@ -25,12 +25,14 @@ $("#checkout-page").on('click', '.data-ajax-url', function(e) {
     e.preventDefault();
     hashHistory.push($(this).attr('data-hash'));
 
-    console.log(hashHistory);
+    if($(this).attr('data-hash') == 'step-2'){
+      $("html, body").scrollTop(50);  
+    }
 
     // Allow the window to go back on hashchange 
     setTimeout(function(){
       windowBack = true;
-    }, 100);
+    }, 50);
 });
 
 $(window).on("hashchange", window, function(e) {
