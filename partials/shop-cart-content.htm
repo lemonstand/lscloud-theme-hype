@@ -1,8 +1,8 @@
 <div class="row">
     
 
-<p>SHOPPING CART</p>
-<div class="col-md-9">
+<p id="title-p-d">SHOPPING CART</p>
+<div class="col-md-12">
     {{ flash() }}
     <div class="items-holder">
         
@@ -12,7 +12,7 @@
 
 </div>
 
-<div class="col-md-3" id="summary">
+<div class="col-md-3 row">
     <p>Order Summary</p>
     <ul class="price-list list-group">
         {% if totals.discountTotal > 0 %}

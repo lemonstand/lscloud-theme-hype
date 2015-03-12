@@ -39,6 +39,13 @@
         <li id="mobile-cart">
           <a href="{{ site_url('cart') }}">CART</a>
         </li>
+        <li id="mobile-cart">
+          {% if customer %}
+          <a href="{{ site_url('checkout') }}">CHECKOUT</a>
+          {% else %}
+          <a href="{{ site_url('checkout-start') }}">CHECKOUT</a>
+          {% endif %}
+        </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

@@ -111,13 +111,11 @@ a:hover{
     text-decoration: none;
   color:black;
 }
-.success{
-  background: rgba(232, 185, 0, 0.8);
-  padding: 4px;
-  color: #333;
-  font-style: italic;
-  text-transform: uppercase;
+.list-group-item{
+  border:none;
+  border-top:1px solid #f1f1f1;
 }
+
 
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus { background-color:#f5f5f5;}
 /*============================================
@@ -470,7 +468,7 @@ color:rgba(255,255,255,0.8);
   position:fixed;
   top:30%;
   right:100px;
-  z-index: 9999;
+  z-index: 899;
   background:white;
   text-align: center;
   border-bottom:7px solid #aaa;
@@ -550,6 +548,9 @@ select {
   padding-top:50px;
   background:url(../img/bg.jpg) no-repeat top center;
   background-size:cover;
+}
+.sign-in-holder .form-group{
+  padding-bottom:10px;
 }
 #login-page-layer{
 
@@ -1010,14 +1011,14 @@ select {
     display:none;
   }
   #logo-mob{
-    height:52px;
+    height:50px;
     padding-left:10px;
     float:left;
     padding-top:17px;
     display:block;
   }
   #logo-mob img{
-    height:100%;
+    height:90%;
     width:auto;
   }
   .search-bar{
@@ -1079,7 +1080,7 @@ select {
 }
 .intro-content img{
   width:80%;
-  padding-top:60px;
+  padding-top:100px;
 }
 .cart-mobile{
   padding-top:15px;
@@ -1650,8 +1651,27 @@ select {
   #cart-row{
     padding-top:15px;
   }
+  .payment-card{
+    margin:0 auto;
+    border-radius:4px;
+    border:1px solid #ccc;
+    padding:10px;
+    padding-bottom:50px;
+  }
+  #payment-form .pull-left{
+    float:right !important;
+  }
+  #item-middle .pull-left{
+    float:none !important;
+  }
+  .btn-important, .btn-default{
+    width:100%;
+  }
 }
 
+#loading-indicator{
+  z-index: 99999;
+}
 
 
 
@@ -1723,6 +1743,64 @@ select {
 }
 .pagination-holder > ul > li > a {
   border-radius: 0 !important;
+}
+
+
+
+.success{
+  background: rgba(232, 185, 0, 0.8);
+  padding: 4px;
+  color: #333;
+  font-style: italic;
+  text-transform: uppercase;
+
+  animation: fadeOut 1s;
+  -moz-animation: fadeOut 1s;
+  -webkit-animation: fadeOut 1s;
+  -o-animation: fadeOut 1s;
+
+  animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  -o-animation-fill-mode:forwards;
+
+  animation-delay:2s;
+  -moz-animation-delay:2s;
+  -webkit-animation-delay:2s;
+  -o-animation-delay:2s;
+
+}
+@keyframes fadeOut {
+    0% {
+        opacity:1;
+    }
+    100% {
+        opacity:0;
+    }
+}
+@-moz-keyframes fadeOut {
+    0% {
+        opacity:1;
+    }
+    100% {
+        opacity:0;
+    }
+}
+@-webkit-keyframes fadeOut {
+    0% {
+        opacity:1;
+    }
+    100% {
+        opacity:0;
+    }
+}
+@-o-keyframes fadeOut {
+    0% {
+        opacity:1;
+    }
+    100% {
+        opacity:0;
+    }
 }
 
 
