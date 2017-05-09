@@ -9,8 +9,8 @@
     "options": "options.json",
     "demo" : "https//hype.lemonstand.com",
     "screenshots" : {
-      "small":"https://raw.githubusercontent.com/lemonstand/lemonstand_hype_repository/master/resources/screenshots/tiny-square.png",
-      "large":"https://raw.githubusercontent.com/lemonstand/lemonstand_hype_repository/master/resources/screenshots/large-square.png"
+      "small":"https://raw.githubusercontent.com/lemonstand/lscloud-theme-hype/master/resources/screenshots/tiny-square.png",
+      "large":"https://raw.githubusercontent.com/lemonstand/lscloud-theme-hype/master/resources/screenshots/large-square.png"
     }
   },
   "scripts": {
