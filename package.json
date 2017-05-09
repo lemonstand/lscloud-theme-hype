@@ -1,5 +1,5 @@
 {
-  "name": "hype",
+  "name": "Hype",
   "version": "1.0.0",
   "description": "Hype is catered towards more specialized or boutique stores with original products. In order to sell a product that has unique features, the product photography needs to be harmonious with the theme design. Product pages in Hype come with only one column, allowing for larger images at the front and center. Use this theme if allowing customers to see all angles of your product helps increase conversions.",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "type": "theme",
     "options": "options.json",
     "demo" : "https//hype.lemonstand.com",
-    "screenshot" : {
+    "screenshots" : {
       "small":"https://raw.githubusercontent.com/lemonstand/lemonstand_hype_repository/master/resources/screenshots/tiny-square.png",
       "large":"https://raw.githubusercontent.com/lemonstand/lemonstand_hype_repository/master/resources/screenshots/large-square.png"
     }
@@ -20,7 +20,7 @@
     "type": "git",
     "url": "git+https://github.com/lemonstand/lscloud-theme-hype.git"
   },
-  "author": "Bruce Alderson <bruce@lemonstand.com> (http://lemonstand.com)",
+  "author": "LemonStand <support@lemonstand.com> (http://docs.lemonstand.com)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/lemonstand/lscloud-theme-hype/issues"
