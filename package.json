@@ -1,7 +1,7 @@
 {
   "name": "Hype",
   "version": "1.0.0",
-  "description": "Hype is catered towards more specialized or boutique stores with original products. In order to sell a product that has unique features, the product photography needs to be harmonious with the theme design. Product pages in Hype come with only one column, allowing for larger images at the front and center. Use this theme if allowing customers to see all angles of your product helps increase conversions.",
+  "description": "Hype is catered towards more specialized or boutique stores, especially ones in food and beverage. Product pages feature large images that are stacked while the product details stay fixed to the right, allowing for larger images at the front and center. Use this theme if allowing customers to see all angles of your product helps increase conversions.",
   "main": "index.js",
   "lemonstand" : {
     "code":"hype",
@@ -25,5 +25,12 @@
   "bugs": {
     "url": "https://github.com/lemonstand/lscloud-theme-hype/issues"
   },
-  "homepage": "https://github.com/lemonstand/lscloud-theme-hype#readme"
+  "homepage": "https://github.com/lemonstand/lscloud-theme-hype#readme",
+  "keywords": [
+    "minimal",
+    "food",
+    "hero-image",
+    "1-page-checkout",
+    "small-cactalog"
+  ]
 }
